@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camisas 10</title>
+    <link rel="shorcut icon" href="favico1n.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    
+    <header id="Inicio">
+        <nav>
+            <ul>
+                <li><a href="index.html"><img src="favicon-32x32.png" alt="" width="5%"></a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="produtos.html">Mais bonecos</a></li>
+                <li class="dropdown">
+                    <a href="#serviços" class="dropbtn">Tipos</a>
+                    <ul class="dropdown-content" >
+                        <li><a href="produtos.html">Marvel</a></li>
+                        <li><a href="produtos.html">DC</a></li>
+                        <li><a href="produtos.html">Animes</a></li>
+                    </ul>
+                </li>
+                <li><a href="#Final">Sobre</a></li>
+                <li><a href="login.html"><button class="btn-login">Cadastra-se</button></a></li>
+                <li><a href="Carrinho.html"><button class="btn-login"><img src="reeba.png" alt=""></button></a></li>
+            </ul>
+        </nav>
+    </header>
+        <main>
+         <hr>
+            <br>
+            </div>|
+            <hr>
+            
+            <h1>Camisetas de time</h1>
+        </header>
+        <div class="slider">
+            <div class="slides">
+                <div class="slide">
+                    <img src="_izx6uwqsf7pg.jpg" alt="Banner 1">
+                </div>
+                <div class="slide">
+                    <img src="images (1).jfif" alt="banner 2">
+                </div>
+                <div class="slide">
+                    <img src="images (2).jfif" alt="banner 3">
+                </div>
+            </div>
+        </div>
+        <section class="Noticia" id="Camisas">
+            <div class="container">
+                <div class="card">
+                    <h2><img src="Nezuku.png" alt=""></h2>
+                    <p class="letra">Boneco Nezuko - 120,00</p>
+                    <button onclick="addToCart('Boneco Nezuko', 'Nezuku.png', 120)">Adicionar ao Carrinho</button>
+                </div>
+                <div class="card">
+                    <h2><img src="shopping (2).webp" alt=""></h2>
+                    <p class="letra">Boneco Michael.J - 140,00</p>
+                    <button onclick="addToCart('Boneco Michael.J', 'shopping (2).webp', 120)">Adicionar ao Carrinho</button>
+                </div>
+                <div class="card">
+                    <h2><img src="shopping (3).webp" alt=""></h2>
+                    <p class="letra">Boneco Dig - 120,00</p>
+                    <button onclick="addToCart('Boneco Dig', 'shopping (3).webp', 120)">Adicionar ao Carrinho</button>
+                </div>
+                <div class="card">
+                    <h2><img src="shopping.webp" alt=""></h2>
+                    <p class="letra">Boneco Luffy - 120,00</p>
+                    <button onclick="addToCart('Boneco Luffy', 'shopping.webp', 120)">Adicionar ao Carrinho</button>
+                </div>
+             </div>
+        </section>
+        <hr>
+        <section class="Musicas" id="Musicas">
+        
+        </section>
+        </iframe>
+    </main>
+    <section class="Final" id="Final"></section>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Sobre nós</h4>
+                <p>Somos uma empresa</p>
+            </div>
+            <div class="footer-section">
+                <h4>Links rapidos</h4>
+                <ul>
+                    <a href="#Titulo" title="Titulo"><img src="favicon.ico"iconetopo" width="10%"></a>
+                    <br>
+                    <li><a href="#Inicio" title="Inicio" class="Inicio">Inicio</a></li>
+                 <li><a href="#Camisas" title="Camisas" class="Camisas">Camisas</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contatos</h4>
+                <p>Email:Igorspike000@gmail.com</p>
+                <p>Telefone:11111:1111</p>
+                <p>Endereço:Rua dos bobos</p>
+            </div>
+            <div class="footer-section">
+                <h4>Siga-nos</h4>
+                <div class="Social-link">
+                    <a href="https://www.youtube.com/channel/UCm5TtnejcDYLHZxSQcg8QHw"
+                     target="_blank">Youtube</a>
+                     <br>
+                    <a href="https://open.spotify.com/intl-pt/artist/6ab8tnQvr8sXXIpSZCrbQs"
+                     target="_blank">Spotify</a>
+                     <br>
+                    <a href="https://x.com/yunglixoinfo"
+                     target="_blank">x</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Empresa. Todos os direitos reservado</p>
+        </div>
+    </footer>
+</body>
+
+</html>
+<script>
+    function addToCart(name, image, price) {
+        let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        const existingItemIndex = cartItems.findIndex(item => item.name === name);
+
+        if (existingItemIndex !== -1) {
+            cartItems[existingItemIndex].quantity += 1;
+        } else {
+            cartItems.push({ name, image, price, quantity: 1 });
+        }
+        
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        alert(`${name} foi adicionado ao carrinho.`);
+    }
+</script>
+
+    
+    </html>

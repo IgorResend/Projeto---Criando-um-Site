@@ -1,0 +1,266 @@
+*{
+    width:auto;
+    height: auto;
+    background-color:rgb(104, 134, 222);;
+}
+
+.letra{
+    text-emphasis-color: rgb(0, 0, 0);
+    background-color: rgb(69, 203, 190);
+}
+
+
+body{
+    width: 98%;
+    height: 100%;
+    padding: 10px;
+}
+h1{
+    text-align: center;
+}
+header, .menu{
+        padding: 10px;
+        color:rgb(104, 134, 222);
+        border: 1px;
+        border-style: dashed;
+}
+.menu{
+    background-color: rgba(17, 24, 39, 1);
+}
+.Titulo, .Noticia, .Outros, .Tabela, .Autor{
+    margin-right: 10px;
+    padding: 10px;
+    border: 1px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.Noticia ,.Outros h2{
+    font-style: oblique;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.Noticia ,.Outros li{
+    color:rgb(255, 254, 254);
+}
+a{
+    background-color:inherit;
+    color: rgb(255, 241, 241);
+    font-style: italic;
+    text-decoration: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+iframe{
+    width: 600px;
+    height: 480px;
+}
+.fotoperfil{
+    width: 10%;
+    border-radius: 360%;
+}
+footer{
+    background-color: rgba(104, 134, 222);
+    color: white;
+    padding: 40px 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.footer-container{
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.footer-section{
+    flex-basis: 23%;
+    margin-bottom: 20px;
+}
+.footer-section h4{
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: wheat;
+}
+.footer-section p,.footer-section ul{
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+.footer-section ul{
+    list-style-type: none;
+}
+.footer-section ul li{
+    margin-bottom: 10px;
+}
+.footer-section ul li a{
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.footer-section ul li a:hover{
+    color: #2aa399;
+}
+.social-links a{
+    display: inline-block;
+    margin-right: 10px;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.social-links a:hover{
+    color: #2aaa88;
+}
+.footer-bottom{
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 0;
+    border-top: 1px solid #322f2f;
+    font-size: 14px;
+}
+.footer-bottom p{
+    margin: 0;
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+    display: 10px;
+    transition: color 0.3s;
+}
+nav ul li a:hover{
+    color: #32afba;
+}
+nav{
+    background-color: rgba(104, 134, 222);;
+    padding: 10px 0;
+}
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+nav ul li{
+    position: relative;
+    margin: 0 15px;
+}
+nav ul li .dropdown-content{
+    display:none ;
+    position: absolute;
+    background-color: (58, 46, 102);
+    box-shadow: 0px 8px 16px 0px rgb(56, 178, 149);
+    z-index: 1;
+    min-width: 160px;
+    padding: 0;
+}
+nav ul li .dropdown-content li{
+    margin: 0;
+}
+nav ul li .dropdown-content li a{
+    padding: 1px 1px;
+}
+nav ul li .dropdown-content li a:hover{
+    background-color: #575755;
+}
+nav ul li:hover .dropdown-content{
+    display:block
+}
+.slider{
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+.slides{
+    display: flex;
+    width: 200%;
+    animation: slideAnimation 9s infinite;
+}
+.slide{
+    width: 50%;
+    flex-shrink: 0;
+}
+@keyframes slideAnimation {
+    0%{transform: translateX(0);}
+    33%{transform: translateX(-50%);}
+    66%{transform: translateX(-100%);}
+    100%{transform: translateX(0);}
+}
+.slide img{
+    width: 100%;
+    display: block;
+}
+.container{
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.container img{
+    width: 100%;
+}
+.card{
+    background-color: rgb(69, 203, 190);
+    border: 1px solid #100e76;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow:0 2px 5px rgb(69, 203, 190);
+    flex: 1;
+    max-width: 300px;
+}
+.card h2{
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #ffffff;
+}
+.card p{
+    color: #000000;
+}
+.gallery_container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+    width: 80%;
+    margin: auto;
+}
+.gallery-item img {
+    width: 100%;
+    height: auto; 
+}
+.grid-gallery-container {
+    display: flex; /* Ativa o Flexbox */
+    justify-content: space-around; /* Distribui os itens com espaço ao redor */
+    flex-wrap: wrap; /* Permite que os itens quebrem linha se não couberem */
+    padding: 20px;
+    width: 80%;
+    margin: auto; /*coloca o container para o meio automaticamente*/
+}
+.grid-gallery-container:hover .gallery-item{
+    opacity: .5;
+}
+.grid-gallery-container .gallery-item:hover {
+    opacity: 1
+}
+/* Cada item da galeria */
+.grid-gallery-item {
+    margin: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 200px; /* Define uma largura fixa para cada item */
+    transition: all .3s;
+}
+.grid-gallery-item:hover{
+    transform: translateY(-20px)
+}
+
+/* Estilos para as imagens */
+.grid-gallery-item img {
+    width: 100%; /* Garante que a imagem preencha todo o espaço disponível */
+    height: auto; /* Mantém a proporção da imagem */
+}
+.btn-login{
+    color: #ffffff;
+    border-radius: 10.375rem;
+}

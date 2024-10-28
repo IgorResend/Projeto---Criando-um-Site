@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho</title>
+    <link rel="stylesheet" href="Carrinho.css">
+</head>
+<body>
+    <main>
+        <li><a class="content-container" href="index.html"><img src="transferir (1).png"></a></li>
+        <section class="carrinho">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Quantidade</th>
+                        <th>Preço Unitário</th>
+                        <th>Total</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items">
+                </tbody>
+            </table>
+            <div class="total-final">
+                <h3>Total Final: <span id="total-final">R$ 0,00</span></h3>
+            </div>
+        </section>
+    </main>
+    <script>
+        function loadCartItems() {
+            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            const cartItemsContainer = document.getElementById('cart-items');
+            let total = 0;
+
+            cartItemsContainer.innerHTML = '';
+            cartItems.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${item.name} <img class="img" src="${item.image}" alt="${item.name}"></td>
+                    <td><input type="number" value="${item.quantity}" min="1" class="quantidade" onchange="updateQuantity('${item.name}', this.value)"></td>
+                    <td>R$ ${item.price.toFixed(2)}</td>
+                    <td>R$ ${itemTotal.toFixed(2)}</td>
+                    <td><button class="remover-produto" onclick="removeFromCart('${item.name}')">Remover</button></td>
+                `;
+                cartItemsContainer.appendChild(row);
+            });
+
+            document.getElementById('total-final').textContent = `R$ ${total.toFixed(2)}`;
+        }
+
+        function updateQuantity(name, quantity) {
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            const itemIndex = cartItems.findIndex(item => item.name === name);
+
+            if (itemIndex !== -1) {
+                cartItems[itemIndex].quantity = parseInt(quantity);
+                localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                loadCartItems();
+            }
+        }
+
+        function removeFromCart(name) {
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            cartItems = cartItems.filter(item => item.name !== name);
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            loadCartItems();
+        }
+
+        document.addEventListener('DOMContentLoaded', loadCartItems);
+    </script>
+</body>
+</html>

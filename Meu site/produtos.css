@@ -1,0 +1,86 @@
+/* Ajustes gerais */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(17, 27, 50);
+    color: aliceblue;
+}
+
+/* Estilizando o título */
+.Cor-letra {
+    color: aliceblue;
+}
+
+/* Flexbox principal para a barra de categorias e as camisas */
+.content-container {
+    display: flex;
+    align-items: flex-start; /* Alinha no topo */
+    gap: 30px; /* Espaçamento entre as colunas */
+    padding: 20px;
+}
+
+/* Categorias */
+.footer-section {
+    flex-basis: 20%; /* Barra de categorias ocupa 20% da largura */
+    max-width: 200px;
+}
+
+/* Parte das camisas */
+.container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    flex-grow: 1; /* Faz a seção de camisas ocupar o restante do espaço */
+}
+
+.card {
+    background-color: rgb(34, 12, 104);
+    border: 3px solid #100e76;
+    border-radius: 12px;
+    padding: 2px;
+    box-shadow: 0 2px 51px rgb(30, 17, 142);
+    flex: 1;
+    max-width: 200px; /* Largura máxima de cada card */
+}
+
+/* Ajusta o estilo das imagens dentro dos cards */
+.card img {
+    max-width: 100%;
+    height: auto;
+}
+.category-button {
+    background-color: rgb(34, 12, 104);
+    color: #f0f8ff;
+    border: 2px solid #100e76;
+    border-radius: 18px;
+    padding: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.category-button:hover {
+    background-color: rgb(50, 30, 130);
+    transform: scale(1.05); /* Pequeno efeito de zoom ao passar o mouse */
+}
+.letra{
+    color: rgb(0, 0, 0);
+    background-color: rgb(115, 0, 255);
+}
+.font{
+    font-size: 30px;
+}
+.img{
+    width: 75%;
+}
+.btn-login{
+    color: rgb(115, 0, 255);
+    border-radius: 10.375rem;
+}
